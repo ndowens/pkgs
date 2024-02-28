@@ -16,6 +16,6 @@ jobs:
 
 
         with:
-          path: "*"
+          path: checkupdates
           flags: '-si --noconfirm'
           namcap: false
