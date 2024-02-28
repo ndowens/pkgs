@@ -1,4 +1,4 @@
-pname: CI
+name: CI
 
 on:
   push:
@@ -16,6 +16,6 @@ jobs:
 
 
         with:
-          path: '*/PKGBUILD'
+          path: "*/"
           flags: '-si --noconfirm'
           namcap: false
