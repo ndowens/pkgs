@@ -16,6 +16,6 @@ jobs:
 
 
         with:
-          path: 'checkupdates'
+          path: '*/PKGBUILD'
           flags: '-si --noconfirm'
           namcap: false
