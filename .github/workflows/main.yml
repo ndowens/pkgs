@@ -1,7 +1,6 @@
 name: PKGBUILD CI
 
 on: [push, pull_request]
-pkgdir: artools
 jobs:
   pkgbuild:
     runs-on: ubuntu-latest
@@ -12,6 +11,7 @@ jobs:
       id: makepkg
       uses: edlanglois/pkgbuild-action@v1
     - name: Print Package Files
+      pkgdir: artools
       run: |
         echo "Successfully created the following package archive"
         echo "Package: ${{ steps.makepkg.outputs.pkgfile0 }}"
