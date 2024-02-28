@@ -1,0 +1,40 @@
+# Maintainer: Dudemanguy <dudemanguy@artixlinux.org
+
+pkgname=artix-checkupdates
+pkgver=0.8.4
+pkgrel=1.2
+pkgdesc="Tool to check on updates between Artix and Arch"
+arch=(x86_64)
+url="https://gitea.artixlinux.org/artix/artix-checkupdates"
+license=('GPL3')
+groups=('artix-tools')
+depends=(
+    'brotli'
+    'curl'
+    'acl'
+    'openssl'
+    'glibc'
+    'libunistring'
+    'keyutils'
+    'pacman'
+)
+makedepends=('git')
+backup=('etc/artix-checkupdates/config')
+source=("git+${url}.git#tag=${pkgver}")
+b2sums=('SKIP')
+
+prepare() {
+  cd "${pkgname}"
+  git cherry-pick -n e0764a7f3351807d91f1e1347c64a39a51d884cc
+}
+
+build() {
+  cd "${pkgname}"
+  make
+}
+
+package() {
+  make -C "${pkgname}" DESTDIR="${pkgdir}" install
+  ln -sfv "${pkgdir}"/usr/bin/artix-checkupdates comparepkg
+  install -D comparepkg -t "${pkgdir}"/usr/bin
+}
