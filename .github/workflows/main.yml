@@ -4,6 +4,7 @@ on: [push, pull_request]
 
 jobs:
   pkgbuild:
+    pkgdir: artools
     runs-on: ubuntu-latest
     steps:
     - name: Checkout
