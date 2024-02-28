@@ -1,10 +1,9 @@
 name: PKGBUILD CI
 
 on: [push, pull_request]
-
+pkgdir: artools
 jobs:
   pkgbuild:
-    pkgdir: artools
     runs-on: ubuntu-latest
     steps:
     - name: Checkout
