@@ -1,4 +1,4 @@
-name: CI
+pname: CI
 
 on:
   push:
@@ -16,6 +16,6 @@ jobs:
 
 
         with:
-          path: artools
+          path: checkupdates
           flags: '-si --noconfirm'
           namcap: false
