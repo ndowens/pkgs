@@ -11,7 +11,6 @@ jobs:
       id: makepkg
       uses: edlanglois/pkgbuild-action@v1
     - name: Print Package Files
-      pkgdir: artools
       run: |
         echo "Successfully created the following package archive"
         echo "Package: ${{ steps.makepkg.outputs.pkgfile0 }}"
