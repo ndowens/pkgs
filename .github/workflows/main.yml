@@ -16,6 +16,6 @@ jobs:
 
 
         with:
-          path: artools checkupdates
+          path: 'checkupdates'
           flags: '-si --noconfirm'
           namcap: false
