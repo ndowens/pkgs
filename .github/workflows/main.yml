@@ -4,6 +4,7 @@ on: [push, pull_request]
 
 jobs:
   pkgbuild:
+    
     runs-on: ubuntu-latest
     steps:
     - name: Checkout
@@ -16,7 +17,7 @@ jobs:
         echo "Successfully created the following package archive"
         echo "Package: ${{ steps.makepkg.outputs.pkgfile0 }}"
     # Uncomment to upload the package as an artifact
-    # - name: Upload Package Archive
-    #   uses: actions/upload-artifact@v2
-    #   with:
-    #     path: ${{ steps.makepkg.outputs.pkgfile0 }}
+    - name: Upload Package Archive
+      uses: actions/upload-artifact@v2
+      with:
+        path: ${{ steps.makepkg.outputs.pkgfile0 }}
