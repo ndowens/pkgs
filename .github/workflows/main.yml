@@ -1,27 +1,22 @@
-name: test
-on: [push, pull_request, workflow_dispatch]
+name: PKGBUILD CI
+
+on: [push, pull_request]
 
 jobs:
-  test-run:
+  pkgbuild:
     runs-on: ubuntu-latest
-    container:
-      image: archlinux
-      options: --privileged
     steps:
-      - uses: actions/checkout@v3
-      - name: Set proper repository url in PKGBUILD
-        run: sed -i "s|%URL%|${{ github.server_url }}/${{ github.repository }}|" checkupdates/PKGBUILD
-      - name: Build Arch Linux package
-        uses: ./
-        with:
-          BUILD_SCRIPT: extra-x86_64-build
-          PKGBUILD: $GITHUB_WORKSPACE/.github/workflows/PKGBUILD
-          OUTDIR: $HOME/arch-packages
-      - name: Build the package again
-        uses: ./
-        with:
-          BUILD_SCRIPT: extra-x86_64-build
-          PKGBUILD: checkupdates/PKGBUILD
-          OUTDIR: $HOME/arch-packages2
-
-# See: https://github.com/taotieren/deepin-wine-qq-arch/blob/master/.github/workflows/main.yml
+    - name: Checkout
+      uses: actions/checkout@v2
+    - name: Makepkg Build and Check
+      id: makepkg
+      uses: edlanglois/pkgbuild-action@v1
+    - name: Print Package Files
+      run: |
+        echo "Successfully created the following package archive"
+        echo "Package: ${{ steps.makepkg.outputs.pkgfile0 }}"
+    # Uncomment to upload the package as an artifact
+    # - name: Upload Package Archive
+    #   uses: actions/upload-artifact@v2
+    #   with:
+    #     path: ${{ steps.makepkg.outputs.pkgfile0 }}
