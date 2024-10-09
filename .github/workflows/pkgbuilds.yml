@@ -16,10 +16,6 @@ jobs:
 #         (always() && ${{ github.event_name }} == "schedule")
     timeout-minutes: 180
     steps:
-    - uses: actions/checkout@v4.2.1
-      with:
-        fetch-depth: 20
-    - run: cd $GITHUB_REPOSITORY
     - run: sh entrypoint.sh
     - uses: actions/upload-artifact@v4.4.2
       if: success()
@@ -33,9 +29,6 @@ jobs:
     if: github.event_type == 'schedule'
     timeout-minutes: 180
     steps:
-    - uses: actions/checkout@v4.2.1
-      with:
-        fetch-depth: 20
     - run: sh entrypoint-git.sh
     - uses: actions/upload-artifact@v4.4.2
       if: success()
@@ -51,9 +44,6 @@ jobs:
       image: cachyos/cachyos-v3:latest
     timeout-minutes: 180
     steps:
-    - uses: actions/checkout@v4.2.1
-      with:
-        fetch-depth: 20
     - uses: actions/download-artifact@v4.4.2
     - run: cd public/
     - run: repo-add local-revan.db.tar.gz *.pkg.tar.zst
@@ -69,9 +59,6 @@ jobs:
       image: busybox
     timeout-minutes: 180
     steps:
-    - uses: actions/checkout@v4.2.1
-      with:
-        fetch-depth: 20
     - uses: actions/download-artifact@v4.4.2
       with:
         name: package
