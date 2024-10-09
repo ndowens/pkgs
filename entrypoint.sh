@@ -23,7 +23,7 @@ EOF
 #export COMMIT_SHA="$(git rev-parse HEAD~0)"
 #export PKGS=$(git diff $COMMIT_BEFORE_SHA $COMMIT_SHA --name-only | sed -e s,PKGBUILD,,)
 
-export PKGS="$(find packages/* -type d -cmin -1 -mmin -1)
+export PKGS="$(find packages/* -type d -cmin -1 -mmin -1)"
 
 echo $PKGS
 
