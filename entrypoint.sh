@@ -18,6 +18,11 @@ EOF
 cat <<EOF >> /etc/sudoers
 bob ALL=(ALL:ALL) NOPASSWD: ALL
 EOF
+
+export COMMIT_BEFORE_SHA="$(git rev-parse HEAD~1)"
+export COMMIT_SHA="$(git rev-parse HEAD~0)"
+export PKGS=$(git diff $COMMIT_BEFORE_SHA $COMMIT_SHA --name-only | sed -e s,PKGBUILD,,)
+
 PKGS="$(echo $PKGS | sed -e /SRCINFO/d)"
 
 for i in $PKGS ; do
