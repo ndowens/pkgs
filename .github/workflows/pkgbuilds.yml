@@ -24,7 +24,7 @@ jobs:
     - run: export COMMIT_SHA="$(git rev-parse HEAD~0)"
     - run: export PKGS=$(git diff $COMMIT_BEFORE_SHA $COMMIT_SHA --name-only | sed -e s,PKGBUILD,,)
     - run: sh entrypoint.sh
-    - uses: actions/upload-artifact
+    - uses: actions/upload-artifact@latest
       if: success()
       with:
         name: "${{ github.job }}"
@@ -41,7 +41,7 @@ jobs:
         fetch-depth: 20
         lfs: true
     - run: sh entrypoint-git.sh
-    - uses: actions/upload-artifact@latest
+    - uses: actions/upload-artifact@v4.2.1
       if: success()
       with:
         name: "${{ github.job }}"
@@ -62,7 +62,7 @@ jobs:
     - uses: actions/download-artifact@v4.2.1
     - run: cd public/
     - run: repo-add local-revan.db.tar.gz *.pkg.tar.zst
-    - uses: actions/upload-artifact@latest
+    - uses: actions/upload-artifact@v4.2.1
       if: success()
       with:
         name: "${{ github.job }}"
@@ -74,15 +74,15 @@ jobs:
       image: busybox
     timeout-minutes: 180
     steps:
-    - uses: actions/checkout@latest
+    - uses: actions/checkout@v4.2.1
       with:
         fetch-depth: 20
         lfs: true
-    - uses: actions/download-artifact@v4.1.0
+    - uses: actions/download-artifact@v4.2.1
       with:
         name: package
     - run: echo ""
-    - uses: actions/upload-artifact@v4.1.0
+    - uses: actions/upload-artifact@v4.2.1
       if: success()
       with:
         name: "${{ github.job }}"
