@@ -1,0 +1,56 @@
+# Logfile created on 2024-10-09 06:15:52 +0000 by logger.rb/v1.6.0
+I, [2024-10-09T06:15:52.070167 #1]  INFO -- : Using GitHub Features: Defaults
+I, [2024-10-09T06:15:52.092115 #1]  INFO -- request: GET https://gitlab.com/api/v4/projects/ndowens%2FPKGBUILDs
+I, [2024-10-09T06:15:52.481961 #1]  INFO -- response: Status 200
+I, [2024-10-09T06:15:52.484027 #1]  INFO -- request: GET https://gitlab.com/api/v4/projects/ndowens%2FPKGBUILDs
+I, [2024-10-09T06:15:52.882603 #1]  INFO -- response: Status 200
+I, [2024-10-09T06:15:52.883321 #1]  INFO -- request: GET https://gitlab.com/api/v4/projects/ndowens%2FPKGBUILDs/repository/files/.gitlab-ci.yml?ref=master
+I, [2024-10-09T06:15:53.225452 #1]  INFO -- response: Status 200
+I, [2024-10-09T06:15:53.226090 #1]  INFO -- request: GET https://gitlab.com/api/v4/projects/ndowens%2FPKGBUILDs/variables
+I, [2024-10-09T06:15:53.648436 #1]  INFO -- response: Status 200
+I, [2024-10-09T06:15:53.648970 #1]  INFO -- request: GET https://gitlab.com/api/v4/groups/ndowens/variables
+I, [2024-10-09T06:15:53.993004 #1]  INFO -- response: Status 404
+W, [2024-10-09T06:15:53.993339 #1]  WARN -- : Unable to fetch group variables for 'ndowens'
+I, [2024-10-09T06:15:53.993650 #1]  INFO -- request: GET https://gitlab.com/api/v4/projects/ndowens%2FPKGBUILDs/pipeline_schedules
+I, [2024-10-09T06:15:54.317301 #1]  INFO -- response: Status 200
+D, [2024-10-09T06:15:54.336406 #1] DEBUG -- : [Transformers::GitlabCI::On]: Located transformer for 'push'
+D, [2024-10-09T06:15:54.336539 #1] DEBUG -- : [Transformers::GitlabCI::On]: Located transformer for 'merge_request'
+D, [2024-10-09T06:15:54.336586 #1] DEBUG -- : [Transformers::GitlabCI::On]: Located transformer for 'manual'
+D, [2024-10-09T06:15:54.336626 #1] DEBUG -- : [Transformers::GitlabCI::On]: Located transformer for 'schedule'
+D, [2024-10-09T06:15:54.337899 #1] DEBUG -- : [Transformers::GitlabCI::Steps]: Located transformer for 'checkout'
+D, [2024-10-09T06:15:54.339906 #1] DEBUG -- : [Transformers::GitlabCI::Steps]: Located transformer for 'script'
+D, [2024-10-09T06:15:54.339990 #1] DEBUG -- : [Transformers::GitlabCI::Steps]: Located transformer for 'script'
+D, [2024-10-09T06:15:54.340032 #1] DEBUG -- : [Transformers::GitlabCI::Steps]: Located transformer for 'script'
+D, [2024-10-09T06:15:54.340067 #1] DEBUG -- : [Transformers::GitlabCI::Steps]: Located transformer for 'script'
+D, [2024-10-09T06:15:54.340104 #1] DEBUG -- : [Transformers::GitlabCI::Steps]: Located transformer for 'artifacts'
+D, [2024-10-09T06:15:54.342600 #1] DEBUG -- : [Transformers::GitlabCI::Steps]: Located transformer for 'checkout'
+D, [2024-10-09T06:15:54.342690 #1] DEBUG -- : [Transformers::GitlabCI::Steps]: Located transformer for 'script'
+D, [2024-10-09T06:15:54.342733 #1] DEBUG -- : [Transformers::GitlabCI::Steps]: Located transformer for 'artifacts'
+D, [2024-10-09T06:15:54.342821 #1] DEBUG -- : [Transformers::GitlabCI::Steps]: Located transformer for 'checkout'
+D, [2024-10-09T06:15:54.343432 #1] DEBUG -- : [Transformers::GitlabCI::Steps]: Located transformer for 'dependencies'
+D, [2024-10-09T06:15:54.343658 #1] DEBUG -- : [Transformers::GitlabCI::Steps]: Located transformer for 'script'
+D, [2024-10-09T06:15:54.343713 #1] DEBUG -- : [Transformers::GitlabCI::Steps]: Located transformer for 'script'
+D, [2024-10-09T06:15:54.344547 #1] DEBUG -- : [Transformers::GitlabCI::Steps]: Located transformer for 'artifacts'
+D, [2024-10-09T06:15:54.344687 #1] DEBUG -- : [Transformers::GitlabCI::Steps]: Located transformer for 'checkout'
+D, [2024-10-09T06:15:54.344752 #1] DEBUG -- : [Transformers::GitlabCI::Steps]: Located transformer for 'dependencies'
+D, [2024-10-09T06:15:54.344918 #1] DEBUG -- : [Transformers::GitlabCI::Steps]: Located transformer for 'script'
+D, [2024-10-09T06:15:54.344962 #1] DEBUG -- : [Transformers::GitlabCI::Steps]: Located transformer for 'artifacts'
+D, [2024-10-09T06:15:54.345663 #1] DEBUG -- : [Transformers::GitlabCI::Steps]: Located transformer for 'pages'
+I, [2024-10-09T06:15:54.427670 #1]  INFO -- request: GET https://api.github.com/repos/ndowens/pkgs
+I, [2024-10-09T06:15:54.687843 #1]  INFO -- response: Status 200
+I, [2024-10-09T06:15:54.695235 #1]  INFO -- request: GET https://api.github.com/repos/ndowens/pkgs/git/refs/heads/master
+I, [2024-10-09T06:15:54.943213 #1]  INFO -- response: Status 200
+I, [2024-10-09T06:15:54.943813 #1]  INFO -- request: POST https://api.github.com/repos/ndowens/pkgs/git/refs
+I, [2024-10-09T06:15:55.237376 #1]  INFO -- response: Status 201
+I, [2024-10-09T06:15:55.237963 #1]  INFO -- request: GET https://api.github.com/repos/ndowens/pkgs/contents/.github/workflows/pkgbuilds.yml?sha=bb6f11fd52c59d147630273aa5734f2e2b5e8bc0
+I, [2024-10-09T06:15:55.526448 #1]  INFO -- response: Status 404
+I, [2024-10-09T06:15:55.526963 #1]  INFO -- request: PUT https://api.github.com/repos/ndowens/pkgs/contents/.github/workflows/pkgbuilds.yml
+I, [2024-10-09T06:15:56.085092 #1]  INFO -- response: Status 201
+I, [2024-10-09T06:15:56.086156 #1]  INFO -- request: POST https://api.github.com/repos/ndowens/pkgs/pulls
+I, [2024-10-09T06:15:57.114131 #1]  INFO -- response: Status 201
+I, [2024-10-09T06:15:57.116711 #1]  INFO -- : Pull request: 'https://github.com/ndowens/pkgs/pull/1'
+I, [2024-10-09T06:15:57.118266 #1]  INFO -- request: GET https://api.github.com/user
+I, [2024-10-09T06:15:57.385353 #1]  INFO -- response: Status 200
+I, [2024-10-09T06:15:57.386373 #1]  INFO -- request: GET https://api.github.com/repos/ndowens/pkgs
+I, [2024-10-09T06:15:57.659964 #1]  INFO -- response: Status 200
+I, [2024-10-09T06:15:57.661207 #1]  INFO -- : Sending telemetry with transaction id 'c182908f-5d18-4791-bac3-603a7992f818'
