@@ -7,8 +7,6 @@ on:
 concurrency:
   group: "${{ github.ref }}"
   cancel-in-progress: true
-steps:
-   - run: git lfs update --force || true
 jobs:
   create_pkg:
     runs-on: ubuntu-latest
@@ -21,7 +19,6 @@ jobs:
     - uses: actions/checkout@v4.2.1
       with:
         fetch-depth: 20
-        lfs: true
     - run: export COMMIT_BEFORE_SHA="$(git rev-parse HEAD~1)"
     - run: export COMMIT_SHA="$(git rev-parse HEAD~0)"
     - run: export PKGS=$(git diff $COMMIT_BEFORE_SHA $COMMIT_SHA --name-only | sed -e s,PKGBUILD,,)
@@ -41,7 +38,6 @@ jobs:
     - uses: actions/checkout@v4.2.1
       with:
         fetch-depth: 20
-        lfs: true
     - run: sh entrypoint-git.sh
     - uses: actions/upload-artifact@v4.4.2
       if: success()
@@ -60,7 +56,6 @@ jobs:
     - uses: actions/checkout@v4.2.1
       with:
         fetch-depth: 20
-        lfs: true
     - uses: actions/download-artifact@v4.4.2
     - run: cd public/
     - run: repo-add local-revan.db.tar.gz *.pkg.tar.zst
@@ -79,7 +74,6 @@ jobs:
     - uses: actions/checkout@v4.2.1
       with:
         fetch-depth: 20
-        lfs: true
     - uses: actions/download-artifact@v4.4.2
       with:
         name: package
