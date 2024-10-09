@@ -1,0 +1,40 @@
+# Logfile created on 2024-10-09 05:02:10 +0000 by logger.rb/v1.6.0
+I, [2024-10-09T05:02:10.692817 #1]  INFO -- : Using GitHub Features: Defaults
+I, [2024-10-09T05:02:10.717022 #1]  INFO -- request: GET https://gitlab.com/api/v4/projects/ndowens%2Fndowens.gitlab.io
+I, [2024-10-09T05:02:11.035556 #1]  INFO -- response: Status 401
+E, [2024-10-09T05:02:11.036153 #1] ERROR -- : There was an error extracting the GitLab CI pipeline (ndowens/ndowens.gitlab.io)
+Message: Unable to authenticate
+Please verify your access token is valid and contains the following scopes:
+read_api
+(GET 401) Unauthorized: https://gitlab.com/api/v4/projects/ndowens%2Fndowens.gitlab.io
+/usr/local/bundle/gems/actions_importer-1.3.22189/lib/valet/services/gitlab_ci/parse_response.rb:12:in `parse!'
+/usr/local/bundle/gems/actions_importer-1.3.22189/lib/valet/adapters/gitlab_ci/client.rb:125:in `fetch'
+/usr/local/bundle/gems/actions_importer-1.3.22189/lib/valet/adapters/gitlab_ci/client.rb:20:in `fetch_project'
+/usr/local/bundle/gems/actions_importer-1.3.22189/lib/valet/services/gitlab_ci/extract_pipeline.rb:101:in `pipeline_attributes_from_client'
+/usr/local/bundle/gems/actions_importer-1.3.22189/lib/valet/services/gitlab_ci/extract_pipeline.rb:35:in `block in call'
+/usr/local/bundle/gems/actions_importer-1.3.22189/lib/valet/concerns/cli_utilities.rb:132:in `source_file_from_local_or_scm'
+/usr/local/bundle/gems/actions_importer-1.3.22189/lib/valet/services/gitlab_ci/extract_pipeline.rb:34:in `call'
+/usr/local/bundle/gems/actions_importer-1.3.22189/lib/valet/adapters/provider_resolver.rb:58:in `call'
+/usr/local/bundle/gems/actions_importer-1.3.22189/lib/valet/commands/migrate.rb:25:in `block in call'
+/usr/local/bundle/gems/actions_importer-1.3.22189/lib/valet/logger.rb:96:in `with_progress_bar'
+/usr/local/bundle/gems/actions_importer-1.3.22189/lib/valet/commands/migrate.rb:24:in `call'
+/usr/local/bundle/gems/sorbet-runtime-0.5.11108/lib/types/private/methods/call_validation.rb:256:in `bind_call'
+/usr/local/bundle/gems/sorbet-runtime-0.5.11108/lib/types/private/methods/call_validation.rb:256:in `validate_call'
+/usr/local/bundle/gems/sorbet-runtime-0.5.11108/lib/types/private/methods/_methods.rb:275:in `block in _on_method_added'
+/usr/local/bundle/gems/actions_importer-1.3.22189/lib/valet/subcommands/migrate.rb:102:in `gitlab'
+/usr/local/bundle/gems/thor-1.2.2/lib/thor/command.rb:27:in `run'
+/usr/local/bundle/gems/thor-1.2.2/lib/thor/invocation.rb:127:in `invoke_command'
+/usr/local/bundle/gems/thor-1.2.2/lib/thor.rb:392:in `dispatch'
+/usr/local/bundle/gems/thor-1.2.2/lib/thor/invocation.rb:116:in `invoke'
+/usr/local/bundle/gems/thor-1.2.2/lib/thor.rb:243:in `block in subcommand'
+/usr/local/bundle/gems/thor-1.2.2/lib/thor/command.rb:27:in `run'
+/usr/local/bundle/gems/thor-1.2.2/lib/thor/invocation.rb:127:in `invoke_command'
+/usr/local/bundle/gems/thor-1.2.2/lib/thor.rb:392:in `dispatch'
+/usr/local/bundle/gems/thor-1.2.2/lib/thor/base.rb:485:in `start'
+/usr/local/bundle/gems/actions_importer-1.3.22189/exe/actions-importer:19:in `<top (required)>'
+/usr/local/bundle/bin/actions-importer:25:in `load'
+/usr/local/bundle/bin/actions-importer:25:in `<main>'
+I, [2024-10-09T05:02:11.040706 #1]  INFO -- request: GET https://api.github.com/user
+I, [2024-10-09T05:02:11.279342 #1]  INFO -- response: Status 401
+I, [2024-10-09T05:02:11.279579 #1]  INFO -- : GET https://api.github.com/user: 401 - Bad credentials // See: https://docs.github.com/rest
+I, [2024-10-09T05:02:11.279692 #1]  INFO -- : Sending telemetry with transaction id 'ca1951d5-4924-4f35-bb54-e6cdc0433133'

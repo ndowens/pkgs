@@ -1,0 +1,95 @@
+# Logfile created on 2024-10-09 06:03:39 +0000 by logger.rb/v1.6.0
+I, [2024-10-09T06:03:39.833020 #1]  INFO -- : Using GitHub Features: Defaults
+I, [2024-10-09T06:03:39.855210 #1]  INFO -- request: GET https://gitlab.com/api/v4/projects/ndowens%2FPKGBUILDs
+I, [2024-10-09T06:03:40.486151 #1]  INFO -- response: Status 200
+I, [2024-10-09T06:03:40.488106 #1]  INFO -- request: GET https://gitlab.com/api/v4/projects/ndowens%2FPKGBUILDs
+I, [2024-10-09T06:03:40.915273 #1]  INFO -- response: Status 200
+I, [2024-10-09T06:03:40.915974 #1]  INFO -- request: GET https://gitlab.com/api/v4/projects/ndowens%2FPKGBUILDs/repository/files/.gitlab-ci.yml?ref=master
+I, [2024-10-09T06:03:41.270798 #1]  INFO -- response: Status 200
+I, [2024-10-09T06:03:41.271406 #1]  INFO -- request: GET https://gitlab.com/api/v4/projects/ndowens%2FPKGBUILDs/variables
+I, [2024-10-09T06:03:41.606460 #1]  INFO -- response: Status 200
+I, [2024-10-09T06:03:41.607026 #1]  INFO -- request: GET https://gitlab.com/api/v4/groups/ndowens/variables
+I, [2024-10-09T06:03:41.920991 #1]  INFO -- response: Status 404
+W, [2024-10-09T06:03:41.921369 #1]  WARN -- : Unable to fetch group variables for 'ndowens'
+I, [2024-10-09T06:03:41.921678 #1]  INFO -- request: GET https://gitlab.com/api/v4/projects/ndowens%2FPKGBUILDs/pipeline_schedules
+I, [2024-10-09T06:03:42.264192 #1]  INFO -- response: Status 200
+D, [2024-10-09T06:03:42.282208 #1] DEBUG -- : [Transformers::GitlabCI::On]: Located transformer for 'push'
+D, [2024-10-09T06:03:42.282342 #1] DEBUG -- : [Transformers::GitlabCI::On]: Located transformer for 'merge_request'
+D, [2024-10-09T06:03:42.283026 #1] DEBUG -- : [Transformers::GitlabCI::On]: Located transformer for 'manual'
+D, [2024-10-09T06:03:42.283081 #1] DEBUG -- : [Transformers::GitlabCI::On]: Located transformer for 'schedule'
+D, [2024-10-09T06:03:42.284342 #1] DEBUG -- : [Transformers::GitlabCI::Steps]: Located transformer for 'checkout'
+D, [2024-10-09T06:03:42.285601 #1] DEBUG -- : [Transformers::GitlabCI::Steps]: Located transformer for 'script'
+D, [2024-10-09T06:03:42.285664 #1] DEBUG -- : [Transformers::GitlabCI::Steps]: Located transformer for 'script'
+D, [2024-10-09T06:03:42.285708 #1] DEBUG -- : [Transformers::GitlabCI::Steps]: Located transformer for 'script'
+D, [2024-10-09T06:03:42.286445 #1] DEBUG -- : [Transformers::GitlabCI::Steps]: Located transformer for 'script'
+D, [2024-10-09T06:03:42.286496 #1] DEBUG -- : [Transformers::GitlabCI::Steps]: Located transformer for 'artifacts'
+D, [2024-10-09T06:03:42.288294 #1] DEBUG -- : [Transformers::GitlabCI::Steps]: Located transformer for 'checkout'
+D, [2024-10-09T06:03:42.288374 #1] DEBUG -- : [Transformers::GitlabCI::Steps]: Located transformer for 'script'
+D, [2024-10-09T06:03:42.289058 #1] DEBUG -- : [Transformers::GitlabCI::Steps]: Located transformer for 'artifacts'
+D, [2024-10-09T06:03:42.289166 #1] DEBUG -- : [Transformers::GitlabCI::Steps]: Located transformer for 'checkout'
+D, [2024-10-09T06:03:42.289228 #1] DEBUG -- : [Transformers::GitlabCI::Steps]: Located transformer for 'dependencies'
+D, [2024-10-09T06:03:42.289945 #1] DEBUG -- : [Transformers::GitlabCI::Steps]: Located transformer for 'script'
+D, [2024-10-09T06:03:42.290001 #1] DEBUG -- : [Transformers::GitlabCI::Steps]: Located transformer for 'script'
+D, [2024-10-09T06:03:42.290055 #1] DEBUG -- : [Transformers::GitlabCI::Steps]: Located transformer for 'artifacts'
+D, [2024-10-09T06:03:42.290148 #1] DEBUG -- : [Transformers::GitlabCI::Steps]: Located transformer for 'checkout'
+D, [2024-10-09T06:03:42.290205 #1] DEBUG -- : [Transformers::GitlabCI::Steps]: Located transformer for 'dependencies'
+D, [2024-10-09T06:03:42.290341 #1] DEBUG -- : [Transformers::GitlabCI::Steps]: Located transformer for 'script'
+D, [2024-10-09T06:03:42.291041 #1] DEBUG -- : [Transformers::GitlabCI::Steps]: Located transformer for 'artifacts'
+D, [2024-10-09T06:03:42.291100 #1] DEBUG -- : [Transformers::GitlabCI::Steps]: Located transformer for 'pages'
+I, [2024-10-09T06:03:42.373266 #1]  INFO -- request: GET https://api.github.com/repos/ndowen/pkgs
+I, [2024-10-09T06:03:42.615960 #1]  INFO -- response: Status 404
+I, [2024-10-09T06:03:42.618016 #1]  INFO -- request: GET https://api.github.com/user
+I, [2024-10-09T06:03:42.888751 #1]  INFO -- response: Status 200
+I, [2024-10-09T06:03:42.890428 #1]  INFO -- request: GET https://api.github.com/repos/ndowen/pkgs
+I, [2024-10-09T06:03:43.110784 #1]  INFO -- response: Status 404
+I, [2024-10-09T06:03:43.110952 #1]  INFO -- : GET https://api.github.com/repos/ndowen/pkgs: 404 - Not Found // See: https://docs.github.com/rest/repos/repos#get-a-repository
+I, [2024-10-09T06:03:43.111071 #1]  INFO -- : Sending telemetry with transaction id '3704c593-d6fb-472c-83cc-ab56505dd7c4'
+E, [2024-10-09T06:03:43.352020 #1] ERROR -- : Resource not found. This typically occurs when the token provided has insufficient permissions, but can also occur when the resource does not exist.
+Please verify the `GITHUB_ACCESS_TOKEN` variable is valid and contains the repo and workflow scopes.
+(GET 404) Not Found: https://api.github.com/repos/ndowen/pkgs
+Message: Not Found
+/usr/local/bundle/gems/octokit-5.6.1/lib/octokit/response/raise_error.rb:14:in `on_complete'
+/usr/local/bundle/gems/faraday-2.7.2/lib/faraday/middleware.rb:18:in `block in call'
+/usr/local/bundle/gems/faraday-2.7.2/lib/faraday/response.rb:42:in `on_complete'
+/usr/local/bundle/gems/faraday-2.7.2/lib/faraday/middleware.rb:17:in `call'
+/usr/local/bundle/gems/octokit-5.6.1/lib/octokit/middleware/follow_redirects.rb:73:in `perform_with_redirection'
+/usr/local/bundle/gems/octokit-5.6.1/lib/octokit/middleware/follow_redirects.rb:61:in `call'
+/usr/local/bundle/gems/faraday-retry-2.0.0/lib/faraday/retry/middleware.rb:148:in `call'
+/usr/local/bundle/gems/faraday-2.7.2/lib/faraday/rack_builder.rb:153:in `build_response'
+/usr/local/bundle/gems/faraday-2.7.2/lib/faraday/connection.rb:445:in `run_request'
+/usr/local/bundle/gems/faraday-2.7.2/lib/faraday/connection.rb:200:in `get'
+/usr/local/bundle/gems/sawyer-0.9.2/lib/sawyer/agent.rb:99:in `call'
+/usr/local/bundle/gems/octokit-5.6.1/lib/octokit/connection.rb:156:in `request'
+/usr/local/bundle/gems/octokit-5.6.1/lib/octokit/connection.rb:19:in `get'
+/usr/local/bundle/gems/octokit-5.6.1/lib/octokit/client/repositories.rb:27:in `repository'
+/usr/local/bundle/gems/actions_importer-1.3.22189/lib/valet/services/github/submit_workflow.rb:283:in `target_ref'
+/usr/local/bundle/gems/sorbet-runtime-0.5.11108/lib/types/private/methods/call_validation.rb:256:in `bind_call'
+/usr/local/bundle/gems/sorbet-runtime-0.5.11108/lib/types/private/methods/call_validation.rb:256:in `validate_call'
+/usr/local/bundle/gems/sorbet-runtime-0.5.11108/lib/types/private/methods/_methods.rb:275:in `block in _on_method_added'
+/usr/local/bundle/gems/actions_importer-1.3.22189/lib/valet/services/github/submit_workflow.rb:74:in `contents_to_upsert'
+/usr/local/bundle/gems/sorbet-runtime-0.5.11108/lib/types/private/methods/call_validation.rb:256:in `bind_call'
+/usr/local/bundle/gems/sorbet-runtime-0.5.11108/lib/types/private/methods/call_validation.rb:256:in `validate_call'
+/usr/local/bundle/gems/sorbet-runtime-0.5.11108/lib/types/private/methods/_methods.rb:275:in `block in _on_method_added'
+/usr/local/bundle/gems/actions_importer-1.3.22189/lib/valet/services/github/submit_workflow.rb:42:in `call'
+/usr/local/bundle/gems/sorbet-runtime-0.5.11108/lib/types/private/methods/call_validation.rb:256:in `bind_call'
+/usr/local/bundle/gems/sorbet-runtime-0.5.11108/lib/types/private/methods/call_validation.rb:256:in `validate_call'
+/usr/local/bundle/gems/sorbet-runtime-0.5.11108/lib/types/private/methods/_methods.rb:275:in `block in _on_method_added'
+/usr/local/bundle/gems/actions_importer-1.3.22189/lib/valet/commands/migrate.rb:37:in `block in call'
+/usr/local/bundle/gems/actions_importer-1.3.22189/lib/valet/logger.rb:96:in `with_progress_bar'
+/usr/local/bundle/gems/actions_importer-1.3.22189/lib/valet/commands/migrate.rb:36:in `call'
+/usr/local/bundle/gems/sorbet-runtime-0.5.11108/lib/types/private/methods/call_validation.rb:256:in `bind_call'
+/usr/local/bundle/gems/sorbet-runtime-0.5.11108/lib/types/private/methods/call_validation.rb:256:in `validate_call'
+/usr/local/bundle/gems/sorbet-runtime-0.5.11108/lib/types/private/methods/_methods.rb:275:in `block in _on_method_added'
+/usr/local/bundle/gems/actions_importer-1.3.22189/lib/valet/subcommands/migrate.rb:102:in `gitlab'
+/usr/local/bundle/gems/thor-1.2.2/lib/thor/command.rb:27:in `run'
+/usr/local/bundle/gems/thor-1.2.2/lib/thor/invocation.rb:127:in `invoke_command'
+/usr/local/bundle/gems/thor-1.2.2/lib/thor.rb:392:in `dispatch'
+/usr/local/bundle/gems/thor-1.2.2/lib/thor/invocation.rb:116:in `invoke'
+/usr/local/bundle/gems/thor-1.2.2/lib/thor.rb:243:in `block in subcommand'
+/usr/local/bundle/gems/thor-1.2.2/lib/thor/command.rb:27:in `run'
+/usr/local/bundle/gems/thor-1.2.2/lib/thor/invocation.rb:127:in `invoke_command'
+/usr/local/bundle/gems/thor-1.2.2/lib/thor.rb:392:in `dispatch'
+/usr/local/bundle/gems/thor-1.2.2/lib/thor/base.rb:485:in `start'
+/usr/local/bundle/gems/actions_importer-1.3.22189/exe/actions-importer:19:in `<top (required)>'
+/usr/local/bundle/bin/actions-importer:25:in `load'
+/usr/local/bundle/bin/actions-importer:25:in `<main>'
