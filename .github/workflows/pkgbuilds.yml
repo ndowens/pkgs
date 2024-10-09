@@ -1,4 +1,4 @@
-name: ndowens/PKGBUILDs
+name: ndowens/pkgs
 on:
   push:
   workflow_dispatch:
