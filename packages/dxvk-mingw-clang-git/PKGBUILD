@@ -2,7 +2,7 @@
 
 pkgname=dxvk-mingw-clang-git
 pkgver=2.4.1.r97.g90b036f5
-pkgrel=1.1
+pkgrel=1
 pkgdesc='Vulkan-based implementation of D3D9, D3D10 and D3D11 for Linux / Wine, MingW version'
 arch=('x86_64')
 url="https://github.com/doitsujin/dxvk"
