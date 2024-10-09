@@ -16,7 +16,7 @@ jobs:
 #         (always() && ${{ github.event_name }} == "schedule")
     timeout-minutes: 180
     steps:
-    - uses: actions/checkout@v4.1.0
+    - uses: actions/checkout@v4.2.1
       with:
         fetch-depth: 20
         lfs: true
@@ -24,7 +24,7 @@ jobs:
     - run: export COMMIT_SHA="$(git rev-parse HEAD~0)"
     - run: export PKGS=$(git diff $COMMIT_BEFORE_SHA $COMMIT_SHA --name-only | sed -e s,PKGBUILD,,)
     - run: sh entrypoint.sh
-    - uses: actions/upload-artifact@v4.1.0
+    - uses: actions/upload-artifact
       if: success()
       with:
         name: "${{ github.job }}"
@@ -36,12 +36,12 @@ jobs:
     if: github.event_type == 'schedule'
     timeout-minutes: 180
     steps:
-    - uses: actions/checkout@v4.1.0
+    - uses: actions/checkout@v4.2.1
       with:
         fetch-depth: 20
         lfs: true
     - run: sh entrypoint-git.sh
-    - uses: actions/upload-artifact@v4.1.0
+    - uses: actions/upload-artifact@latest
       if: success()
       with:
         name: "${{ github.job }}"
@@ -55,14 +55,14 @@ jobs:
       image: cachyos/cachyos-v3:latest
     timeout-minutes: 180
     steps:
-    - uses: actions/checkout@v4.1.0
+    - uses: actions/checkout@v4.2.1
       with:
         fetch-depth: 20
         lfs: true
-    - uses: actions/download-artifact@v4.1.0
+    - uses: actions/download-artifact@v4.2.1
     - run: cd public/
     - run: repo-add local-revan.db.tar.gz *.pkg.tar.zst
-    - uses: actions/upload-artifact@v4.1.0
+    - uses: actions/upload-artifact@latest
       if: success()
       with:
         name: "${{ github.job }}"
@@ -74,7 +74,7 @@ jobs:
       image: busybox
     timeout-minutes: 180
     steps:
-    - uses: actions/checkout@v4.1.0
+    - uses: actions/checkout@latest
       with:
         fetch-depth: 20
         lfs: true
