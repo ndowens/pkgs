@@ -7,14 +7,7 @@ concurrency:
   group: "${{ github.ref }}"
   cancel-in-progress: true
 jobs:
-  fetch_git:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: ndowens/dummy-action@2
-      - run: |
-          export PKGS="$(git diff HEAD~1..HEAD~2 --name-only | sed -e 's,PKGBUILD,,')"
   create_pkg:
-    needs: fetch_git
     runs-on: ubuntu-latest
     container:
       image: cachyos/cachyos-v3:latest
@@ -22,6 +15,7 @@ jobs:
 #         (always() && ${{ github.event_name }} == "schedule")
     timeout-minutes: 180
     steps:
+    - uses: actions/dummy-action@3
     - uses: actions/checkout@v4.2.1
       with:
         clean: false
