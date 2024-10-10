@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: "get diff"
-        uses: ndowens/dummy-action@v1
+        uses: ndowens/dummy-action@v2
       - run: |
            export PKGS="$(git diff --no-index HEAD~1..HEAD~2 --name-only| sed -e 's,PKGBUILD,,')"
    create_pkg:
