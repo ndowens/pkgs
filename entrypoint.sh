@@ -12,7 +12,7 @@ yes | pacman -Syu --noconfirm
 
 sed -i '/PKGDEST/d' /etc/makepkg.conf
 cat << EOF >> /etc/makepkg.conf
-PKGDEST=/builds/ndowens/PKGBUILDs/public
+PKGDEST=public/
 EOF
 
 cat <<EOF >> /etc/sudoers
@@ -23,10 +23,11 @@ EOF
 #export COMMIT_SHA="$(git rev-parse HEAD~0)"
 #export PKGS=$(git diff $COMMIT_BEFORE_SHA $COMMIT_SHA --name-only | sed -e s,PKGBUILD,,)
 
-export PKGS="$(git diff HEAD~1..HEAD~2 --name-only | sed -e s,PKGBUILD,,)"
+#export PKGS="$(git diff HEAD~1..HEAD~2 --name-only | sed -e s,PKGBUILD,,)"
 
-export PKGS="$PKGS | sed -e /SRCINFO/d"
-
+#export PKGS="$PKGS | sed -e /SRCINFO/d"
+export PKGS="$(find packages/* -cmin -1 -mmin -1 -type d)"
+export PKGS="$PKGS | sed -e s,PKGBUILD,, -e s|.SRCINFO||"
 
 for i in $PKGS ; do
     cd $i
