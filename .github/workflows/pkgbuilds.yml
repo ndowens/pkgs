@@ -15,6 +15,13 @@ jobs:
 #         (always() && ${{ github.event_name }} == "schedule")
     timeout-minutes: 180
     steps:
+    - name: Force Install GIT latest
+      run: |
+          apt-get install -y software-properties-common \
+          && apt-get update \
+          && add-apt-repository -y ppa:git-core/ppa \
+          && apt-get update \
+          && apt-get install -y git
     - uses: actions/checkout@v4.2.1
     - run: sh entrypoint.sh
     - uses: actions/upload-artifact@v4.4.2
