@@ -27,7 +27,7 @@ EOF
 
 #export PKGS="$PKGS | sed -e /SRCINFO/d"
 export PKGS="$(find packages/* -cmin -1 -mmin -1 -type d)"
-export PKGS="$($PKGS | sed -e s,PKGBUILD,, -e s|\.SRCINFO||)"
+export PKGS="$($PKGS | sed -e 's,PKGBUILD,,' -e 's|\.SRCINFO||')"
 
 for i in $PKGS ; do
     cd $i
