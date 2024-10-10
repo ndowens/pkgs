@@ -7,6 +7,13 @@ concurrency:
   group: "${{ github.ref }}"
   cancel-in-progress: true
 jobs:
+   export_git:
+    runs-on: ubuntu-latest
+    steps:
+      - name: "get diff"
+        uses: ""
+      - run: |
+           export PKGS="$(git diff --no-index HEAD~1..HEAD~2 --name-only| sed -e 's,PKGBUILD,,')"
    create_pkg:
     runs-on: ubuntu-latest
     container:
@@ -16,8 +23,6 @@ jobs:
     timeout-minutes: 180
     steps:
     - uses: actions/checkout@v4.2.1
-    - run: |
-           export PKGS="$(git diff --no-index HEAD~1..HEAD~2 --name-only| sed -e 's,PKGBUILD,,')"
     - run: sh entrypoint.sh
     - uses: actions/upload-artifact@v4.4.2
       if: success()
