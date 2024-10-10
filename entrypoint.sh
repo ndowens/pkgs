@@ -30,6 +30,7 @@ export PKGS="$(find packages/* -cmin -1 -mmin -1 -type d)"
 export PKGS="$(echo $PKGS | sed -e 's,PKGBUILD,,' -e 's|\.SRCINFO||')"
 
 for i in $PKGS ; do
+    sudo chown bob -R $i
     cd $i
 	if [[ ! -e usegcc ]]; then
        pacman -S clang lld llvm --noconfirm
