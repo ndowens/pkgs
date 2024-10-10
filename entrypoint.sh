@@ -12,7 +12,7 @@ yes | pacman -Syu --noconfirm
 
 sed -i '/PKGDEST/d' /etc/makepkg.conf
 cat << EOF >> /etc/makepkg.conf
-PKGDEST=public/
+PKGDEST=public
 EOF
 
 cat <<EOF >> /etc/sudoers
@@ -27,7 +27,7 @@ EOF
 
 #export PKGS="$PKGS | sed -e /SRCINFO/d"
 export PKGS="$(find packages/* -cmin -1 -mmin -1 -type d)"
-export PKGS="$($PKGS | sed -e s,PKGBUILD,, -e s|.SRCINFO||)"
+export PKGS="$($PKGS | sed -e s,PKGBUILD,, -e s|\.SRCINFO||)"
 
 for i in $PKGS ; do
     cd $i
