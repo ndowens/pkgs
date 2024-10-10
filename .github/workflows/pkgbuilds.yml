@@ -7,15 +7,7 @@ concurrency:
   group: "${{ github.ref }}"
   cancel-in-progress: true
 jobs:
-   export_git:
-    runs-on: ubuntu-latest
-    steps:
-      - name: "get diff"
-      - run: |
-           export PKGS="$(git diff HEAD~1..HEAD~2 --name-only| sed -e 's,PKGBUILD,,')"
-      - uses: ndowens/dummy-action@2
-   create_pkg:
-    needs: export_git
+    create_pkg:
     runs-on: ubuntu-latest
     container:
       image: cachyos/cachyos-v3:latest
@@ -24,6 +16,8 @@ jobs:
     timeout-minutes: 180
     steps:
     - uses: actions/checkout@v4.2.1
+      with:
+        clean: 'false'
     - run: sh entrypoint.sh
     - uses: actions/upload-artifact@v4.4.2
       if: success()
