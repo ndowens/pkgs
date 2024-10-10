@@ -15,6 +15,7 @@ jobs:
       - run: |
            export PKGS="$(git diff --no-index HEAD~1..HEAD~2 --name-only| sed -e 's,PKGBUILD,,')"
    create_pkg:
+   needs: export_git
     runs-on: ubuntu-latest
     container:
       image: cachyos/cachyos-v3:latest
