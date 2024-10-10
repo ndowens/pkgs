@@ -17,6 +17,7 @@ jobs:
     steps:
     - uses: actions/checkout@v4.2.1
     - run: |
+           pacman -Syu git --noconfirm 
            export PKGS="$(git diff HEAD~1..HEAD~2 --name-only| sed -e 's,PKGBUILD,,')"
     - run: sh entrypoint.sh
     - uses: actions/upload-artifact@v4.4.2
