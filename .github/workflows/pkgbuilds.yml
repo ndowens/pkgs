@@ -15,7 +15,7 @@ jobs:
 #         (always() && ${{ github.event_name }} == "schedule")
     timeout-minutes: 180
     steps:
-    - uses: actions/dummy-action@3
+    - uses: ndowens/dummy-action@3
     - uses: actions/checkout@v4.2.1
       with:
         clean: false
