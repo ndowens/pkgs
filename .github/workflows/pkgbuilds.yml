@@ -8,8 +8,7 @@ concurrency:
   cancel-in-progress: true
 jobs:
   fetch_git:
-    runs-on:
-      group: ubuntu-runners
+    runs-on: ubuntu-latest
     steps:
       - uses: ndowens/dummy-action@2
       - run: |
