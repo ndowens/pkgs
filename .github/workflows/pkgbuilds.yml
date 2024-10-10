@@ -19,6 +19,7 @@ jobs:
       with:
         clean: false
         sparse-checkout: .git
+           *
         sparse-checkout-cone-mode: false
         fetch-depth: 0
     - run: export PKGS="$(git diff HEAD~1..HEAD~2 --name-only | sed -e 's,PKGBUILD,,')"
