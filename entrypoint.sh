@@ -26,8 +26,8 @@ EOF
 #export PKGS="$(git diff HEAD~1..HEAD~2 --name-only | sed -e s,PKGBUILD,,)"
 
 #export PKGS="$PKGS | sed -e /SRCINFO/d"
-export PKGS="$(find packages/* -cmin -1 -mmin -1 -type d)"
-export PKGS="$(echo $PKGS | sed -e 's,PKGBUILD,,' -e 's|\.SRCINFO||')"
+#export PKGS="$(find packages/* -cmin -1 -mmin -1 -type d)"
+#export PKGS="$(echo $PKGS | sed -e 's,PKGBUILD,,' -e 's|\.SRCINFO||')"
 
 for i in $PKGS ; do
     sudo chown bob -R $i
